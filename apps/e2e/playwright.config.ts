@@ -24,7 +24,7 @@ export default defineConfig({
   },
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'npx nx run @block-parser-wasm/block-parser-wasm:preview',
+    command: 'npx nx run @block-parser-wasm/web:preview',
     url: 'http://localhost:4300',
     reuseExistingServer: true,
     cwd: workspaceRoot
@@ -44,7 +44,7 @@ export default defineConfig({
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
     },
-    
+
     // Uncomment for mobile browsers support
     /* {
       name: 'Mobile Chrome',

@@ -16,19 +16,19 @@
 To run the dev server for your app, use:
 
 ```sh
-npx nx serve block-parser-wasm
+npx nx serve web
 ```
 
 To create a production bundle:
 
 ```sh
-npx nx build block-parser-wasm
+npx nx build web
 ```
 
 To see all available targets to run for a project, run:
 
 ```sh
-npx nx show project block-parser-wasm
+npx nx show project web
 ```
 
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.

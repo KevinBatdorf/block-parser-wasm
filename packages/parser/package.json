@@ -1,0 +1,34 @@
+{
+  "name": "block-parser-wasm",
+  "description": "A rust-based parser for WordPress blocks, compiled to WebAssembly.",
+  "version": "0.1.0",
+  "main": "./pkg/index.mjs",
+  "types": "./pkg/index.d.mts",
+  "exports": {
+    ".": {
+      "import": "./pkg/index.mjs",
+      "types": "./pkg/index.d.mts"
+    }
+  },
+  "files": ["pkg/", "Cargo.toml", "src/"],
+  "scripts": {
+    "build:wasm": "wasm-pack build --target web --out-dir pkg --out-name block-parser-wasm",
+    "build:ts": "tsup",
+    "build": "npm run build:wasm && npm run build:ts && rm -f pkg/package.json"
+  },
+  "nx": {
+    "sourceRoot": "packages/parser",
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "npm run build",
+          "cwd": "packages/parser"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0"
+  }
+}

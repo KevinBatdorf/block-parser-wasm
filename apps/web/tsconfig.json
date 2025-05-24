@@ -13,7 +13,7 @@
       "@nx/react/typings/image.d.ts",
       "vite/client"
     ],
-    "rootDir": "src"
+    "rootDir": "src",
   },
   "exclude": [
     "out-tsc",
@@ -32,9 +32,14 @@
     "vitest.config.mts"
   ],
   "include": [
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "src/**/*.ts",
-    "src/**/*.tsx"
+    "src",
+    "src/types",
+    "tests",
+    "../../packages/parser/pkg"
+  ],
+  "references": [
+    {
+      "path": "../../packages/parser"
+    }
   ]
 }

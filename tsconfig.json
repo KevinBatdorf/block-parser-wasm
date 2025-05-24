@@ -4,10 +4,13 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/block-parser-wasm-e2e"
+      "path": "./apps/e2e"
     },
     {
-      "path": "./apps/block-parser-wasm"
+      "path": "./apps/web"
+    },
+    {
+      "path": "./packages/parser"
     }
   ]
 }
