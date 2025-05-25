@@ -52,3 +52,5 @@ packages/parser/target/
 
 # WASM build output
 apps/web/public/pkg/
+
+/target
