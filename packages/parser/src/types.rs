@@ -2,10 +2,15 @@ use serde::Serialize;
 
 #[derive(Serialize, Debug, PartialEq)]
 pub struct Block {
+    #[serde(rename = "blockName")]
     pub block_name: Option<String>,
+    #[serde(rename = "attrs")]
     pub attrs: serde_json::Value,
+    #[serde(rename = "innerBlocks")]
     pub inner_blocks: Vec<Block>,
+    #[serde(rename = "innerHTML")]
     pub inner_html: String,
+    #[serde(rename = "innerContent")]
     pub inner_content: Vec<Option<String>>,
 }
 
