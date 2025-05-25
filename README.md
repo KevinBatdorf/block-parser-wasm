@@ -7,4 +7,5 @@ You can try it out by running `npm ci && npm run dev` and then opening `http://l
 - Maybe a webui to copy/paste blocks
 
 ### Notes
+- I used the spec from [block-serialization-spec-parser](https://github.com/WordPress/gutenberg/tree/trunk/packages/block-serialization-spec-parser)
 - It diverges from the spec in the way it handles malformed blocks. I think this is a better implementation as it will attempt to parse the block as if the closing tag exists.
