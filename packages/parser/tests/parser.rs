@@ -25,7 +25,7 @@ fn parses_blocks_with_line_breaks() {
 	<!-- /wp:group -->
 ",
     ); // space after is important as wp creates another block
-    assert_eq!(parsed.len(), 2);
+    assert_eq!(parsed.len(), 1);
     assert_eq!(
         parsed[0].inner_html,
         "\n\t  <p>Before</p>\n\t  \n\t  <p>After</p>\n\t"

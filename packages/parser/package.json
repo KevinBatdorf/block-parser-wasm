@@ -12,7 +12,7 @@
   },
   "files": ["pkg/", "Cargo.toml", "src/"],
   "scripts": {
-    "build:wasm": "wasm-pack build --target web --out-dir pkg --out-name block-parser-wasm",
+    "build:wasm": "wasm-pack build --release --target web --out-dir pkg --out-name block-parser-wasm",
     "build:ts": "tsup",
     "build": "npm run build:wasm && npm run build:ts && rm -f pkg/package.json"
   },

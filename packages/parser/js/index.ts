@@ -18,5 +18,5 @@ export default async function init(): Promise<void> {
 
 export function parse(input: string): Block[] {
   if (!wasm) throw new Error('WASM not initialized. Call `init()` first.')
-  return wasm.parse_blocks(input)
+  return JSON.parse(wasm.parse_blocks(input))
 }

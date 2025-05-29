@@ -1,21 +1,22 @@
 use serde::Serialize;
+use std::borrow::Cow;
 
 #[derive(Serialize, Debug, PartialEq)]
-pub struct Block {
+pub struct Block<'a> {
     #[serde(rename = "blockName")]
-    pub block_name: Option<String>,
+    pub block_name: Option<Cow<'a, str>>,
     #[serde(rename = "attrs")]
     pub attrs: serde_json::Value,
     #[serde(rename = "innerBlocks")]
-    pub inner_blocks: Vec<Block>,
+    pub inner_blocks: Vec<Block<'a>>,
     #[serde(rename = "innerHTML")]
-    pub inner_html: String,
+    pub inner_html: Cow<'a, str>,
     #[serde(rename = "innerContent")]
-    pub inner_content: Vec<Option<String>>,
+    pub inner_content: Vec<Option<Cow<'a, str>>>,
 }
 
-impl Block {
-    pub fn freeform(html: String) -> Self {
+impl<'a> Block<'a> {
+    pub fn freeform(html: Cow<'a, str>) -> Self {
         Block {
             block_name: None,
             attrs: serde_json::json!({}),
