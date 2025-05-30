@@ -3,7 +3,7 @@ A slower mostly-spec-compatible WebAssembly parser for WordPress blocks. The tes
 You can try it out by running `npm ci && npm run dev` and then opening `http://localhost:4200`. In apps/web/src/app.tsx you can edit the code snippet to see the output.
 
 ### TODO
-- Rewrite as a recursive descent parser
+- Impliment using nom
 
 ### Notes
 - I used the spec from [block-serialization-spec-parser](https://github.com/WordPress/gutenberg/tree/trunk/packages/block-serialization-spec-parser)
