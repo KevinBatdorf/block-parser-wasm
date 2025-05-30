@@ -1,4 +1,4 @@
-A slower mostly-spec-compatible WebAssembly parser for WordPress blocks. The test block in `apps/web/src/assets/block.ts` takes about 4ms to parse, meanwhile in the core parser it takes about 0.4ms.
+A slower mostly-spec-compatible (see notes below) WebAssembly parser for WordPress blocks. The test block in `apps/web/src/assets/block.ts` takes about 4ms to parse, meanwhile in the core parser it takes about 0.4ms.
 
 You can try it out by running `npm ci && npm run dev` and then opening `http://localhost:4200`. In apps/web/src/app.tsx you can edit the code snippet to see the output.
 
