@@ -5,8 +5,6 @@ use std::borrow::Cow;
 pub struct Block<'a> {
     #[serde(rename = "blockName")]
     pub block_name: Option<Cow<'a, str>>,
-    #[serde(rename = "isFreeform", skip_serializing_if = "Option::is_none")]
-    pub is_freeform: Option<bool>,
     #[serde(rename = "attrs")]
     pub attrs: serde_json::Value,
     #[serde(rename = "innerBlocks")]
@@ -20,8 +18,7 @@ pub struct Block<'a> {
 impl<'a> Block<'a> {
     pub fn freeform(html: Cow<'a, str>) -> Self {
         Block {
-            block_name: None,
-            is_freeform: Some(true),
+            block_name: Some("core/freeform".into()),
             attrs: serde_json::json!({}),
             inner_blocks: vec![],
             inner_html: html.clone(),

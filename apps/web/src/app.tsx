@@ -16,7 +16,7 @@ export default function App() {
 		wp: 0,
 	});
 
-	const [text] = useState(defaultTest);
+	const [text] = useState(`freeform has full name`);
 
 	useEffect(() => {
 		new Promise((resolve) => setTimeout(resolve, 1000)).then(() => {

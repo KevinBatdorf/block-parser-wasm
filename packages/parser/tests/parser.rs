@@ -78,12 +78,16 @@ fn parses_blocks_of_various_types() {
 
 #[test]
 fn blockname_is_namespaced_string_except_freeform() {
+    // Note: this diverges from the wp spec as these usually don't have core/freeform
     assert_eq!(
         parse("freeform has full name")[0].block_name.as_deref(),
-        None
+        Some("core/freeform")
     );
     // Incorrect case on B in Block
-    assert_eq!(parse("<!-- wp:Block / -->")[0].block_name.as_deref(), None);
+    assert_eq!(
+        parse("<!-- wp:Block / -->")[0].block_name.as_deref(),
+        Some("core/freeform")
+    );
     assert_eq!(
         parse("<!-- wp:Block / -->")[0].inner_html,
         "<!-- wp:Block / -->"
@@ -306,7 +310,10 @@ fn attack_vectors() {
 #[test]
 fn invalid_block_comment_syntax() {
     // extra space after void closer
-    assert_eq!(parse("<!-- wp:block / -->")[0].block_name.as_deref(), None);
+    assert_eq!(
+        parse("<!-- wp:block / -->")[0].block_name.as_deref(),
+        Some("core/freeform")
+    );
     assert_eq!(
         parse("<!-- wp:block / -->")[0].inner_content,
         vec![Some("<!-- wp:block / -->".into())]

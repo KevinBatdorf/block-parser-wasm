@@ -113,7 +113,6 @@ peg::parser! {
                     inner_blocks,
                     inner_html: Cow::Owned(inner_html),
                     inner_content: inner_content,
-                    is_freeform: None
                 }
             }
 
@@ -125,7 +124,6 @@ peg::parser! {
                     inner_blocks: vec![],
                     inner_html: Cow::Borrowed(""),
                     inner_content: vec![],
-                    is_freeform: None,
                 }
             }
 
