@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import init, { parse } from "block-parser-wasm";
 import { parse as wpParse } from "@wordpress/block-serialization-default-parser";
 import { deepEqual } from "fast-equals";
-import defaultTest from "./assets/block";
+import defaultTest from "./blocks/block";
 
 const ITERATIONS = 1_000;
 

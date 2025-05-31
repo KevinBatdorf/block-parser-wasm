@@ -1,0 +1,610 @@
+.
+├── Cargo.lock
+├── Cargo.toml
+├── js
+│   ├── index.ts
+│   └── types.d.ts
+├── package.json
+├── pbcopy
+├── pkg
+│   ├── block-parser-wasm_bg.wasm
+│   ├── block-parser-wasm_bg.wasm.d.ts
+│   ├── block-parser-wasm.d.ts
+│   ├── block-parser-wasm.js
+│   ├── index.d.mts
+│   └── index.mjs
+├── public
+│   └── pkg
+│       ├── block-parser-wasm_bg.wasm
+│       ├── block-parser-wasm_bg.wasm.d.ts
+│       ├── block-parser-wasm.d.ts
+│       ├── block-parser-wasm.js
+│       └── package.json
+├── src
+│   ├── lib.rs
+│   ├── main.rs
+│   ├── parser.rs
+│   └── types.rs
+├── target
+│   ├── CACHEDIR.TAG
+│   ├── debug
+│   │   ├── build
+│   │   │   ├── proc-macro2-9fa72c21cbd3509a
+│   │   │   │   ├── invoked.timestamp
+│   │   │   │   ├── out
+│   │   │   │   ├── output
+│   │   │   │   ├── root-output
+│   │   │   │   └── stderr
+│   │   │   ├── proc-macro2-dcc42af8043d1b71
+│   │   │   │   ├── build_script_build-dcc42af8043d1b71
+│   │   │   │   ├── build_script_build-dcc42af8043d1b71.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── rustversion-4eb888022d2198d3
+│   │   │   │   ├── build_script_build-4eb888022d2198d3
+│   │   │   │   ├── build_script_build-4eb888022d2198d3.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── rustversion-992cf590823dce27
+│   │   │   │   ├── invoked.timestamp
+│   │   │   │   ├── out
+│   │   │   │   │   └── version.expr
+│   │   │   │   ├── output
+│   │   │   │   ├── root-output
+│   │   │   │   └── stderr
+│   │   │   ├── serde_json-e9e1ac170cb23b67
+│   │   │   │   ├── build_script_build-e9e1ac170cb23b67
+│   │   │   │   ├── build_script_build-e9e1ac170cb23b67.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── serde_json-ea22eb4d140284df
+│   │   │   │   ├── invoked.timestamp
+│   │   │   │   ├── out
+│   │   │   │   ├── output
+│   │   │   │   ├── root-output
+│   │   │   │   └── stderr
+│   │   │   ├── serde-bfb6e46d1d35eeee
+│   │   │   │   ├── invoked.timestamp
+│   │   │   │   ├── out
+│   │   │   │   ├── output
+│   │   │   │   ├── root-output
+│   │   │   │   └── stderr
+│   │   │   ├── serde-f65cd8be83d008c6
+│   │   │   │   ├── build_script_build-f65cd8be83d008c6
+│   │   │   │   ├── build_script_build-f65cd8be83d008c6.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── wasm-bindgen-397c83802fd97170
+│   │   │   │   ├── invoked.timestamp
+│   │   │   │   ├── out
+│   │   │   │   ├── output
+│   │   │   │   ├── root-output
+│   │   │   │   └── stderr
+│   │   │   ├── wasm-bindgen-5f0754dd2fa11ebf
+│   │   │   │   ├── build_script_build-5f0754dd2fa11ebf
+│   │   │   │   ├── build_script_build-5f0754dd2fa11ebf.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── wasm-bindgen-shared-5dce4968eda113bf
+│   │   │   │   ├── build_script_build-5dce4968eda113bf
+│   │   │   │   ├── build_script_build-5dce4968eda113bf.d
+│   │   │   │   └── build-script-build
+│   │   │   └── wasm-bindgen-shared-7eab308b804bad61
+│   │   │       ├── invoked.timestamp
+│   │   │       ├── out
+│   │   │       ├── output
+│   │   │       ├── root-output
+│   │   │       └── stderr
+│   │   ├── deps
+│   │   │   ├── block_parser_wasm-db41a1a838491d7a
+│   │   │   ├── block_parser_wasm-db41a1a838491d7a.222ubqr8mndamu4tucl5beeml.rcgu.o
+│   │   │   ├── block_parser_wasm-db41a1a838491d7a.8flrtk6jurqxnq8q1y05gsptf.rcgu.o
+│   │   │   ├── block_parser_wasm-db41a1a838491d7a.b80t9bb4vnsqj3rck3dhfg1p9.rcgu.o
+│   │   │   ├── block_parser_wasm-db41a1a838491d7a.d
+│   │   │   ├── block_parser_wasm-db41a1a838491d7a.e01uii1md14t3b9xw3bxk8blw.rcgu.o
+│   │   │   ├── block_parser_wasm-db41a1a838491d7a.f2gihapvlrm37ie4iwjcm4evo.rcgu.o
+│   │   │   ├── block_parser_wasm-f0a98279840a1e7a.d
+│   │   │   ├── block_parser_wasm.0h0d7l44ysvm0gb5f2qflnoq0.rcgu.o
+│   │   │   ├── block_parser_wasm.0pycxtrj4t7nco683mknyzkq9.rcgu.o
+│   │   │   ├── block_parser_wasm.143uo0po7eiwykthuvzbmbewt.rcgu.o
+│   │   │   ├── block_parser_wasm.1ool9r8ops96z0g3abdjc7iqb.rcgu.o
+│   │   │   ├── block_parser_wasm.27ln3ay5f4wy93ex0c7ni99cv.rcgu.o
+│   │   │   ├── block_parser_wasm.2925sj6jcjgzwq6bc0gowxecu.rcgu.o
+│   │   │   ├── block_parser_wasm.2lz8fn0qxpv0afvz04kt0rjzg.rcgu.o
+│   │   │   ├── block_parser_wasm.39phd3qzc0ttq90ow32lf7fr0.rcgu.o
+│   │   │   ├── block_parser_wasm.3ivo0a20jivfn5evkl9o69jly.rcgu.o
+│   │   │   ├── block_parser_wasm.3rv1t2i3461nm1003289pzek1.rcgu.o
+│   │   │   ├── block_parser_wasm.3t7uwikzga1qrc600xm62k4sv.rcgu.o
+│   │   │   ├── block_parser_wasm.3yy69rhsgk0owr55u42ys86i9.rcgu.o
+│   │   │   ├── block_parser_wasm.44bf22obwgt7sfgnwuce5yx43.rcgu.o
+│   │   │   ├── block_parser_wasm.4erbp5m8bdcef7rccg3fml3ke.rcgu.o
+│   │   │   ├── block_parser_wasm.4jrnmx4c2azdojrebf389xy21.rcgu.o
+│   │   │   ├── block_parser_wasm.4ka53r1bx5hnp46z6j3p8427w.rcgu.o
+│   │   │   ├── block_parser_wasm.4kbs631fogvuihae0gc57lwhf.rcgu.o
+│   │   │   ├── block_parser_wasm.4v1n8i1dmhv4mvhhcvy58y9nm.rcgu.o
+│   │   │   ├── block_parser_wasm.6a4qjjn4iigzvcjonwslk2yr7.rcgu.o
+│   │   │   ├── block_parser_wasm.6kkcwiqox0noucojucj9667ca.rcgu.o
+│   │   │   ├── block_parser_wasm.6pbtu3rdbpk07k0eruv7fbsv1.rcgu.o
+│   │   │   ├── block_parser_wasm.83i6y6kkozv2cw9dqfg8ntxi2.rcgu.o
+│   │   │   ├── block_parser_wasm.8ntyjuk5k3i4h0e99xqe4bbdj.rcgu.o
+│   │   │   ├── block_parser_wasm.8wiarl34q7iwzsyw1ybghl3xg.rcgu.o
+│   │   │   ├── block_parser_wasm.9g0r3cp4veqak87m8fbmgbiai.rcgu.o
+│   │   │   ├── block_parser_wasm.9spev17qy4kua2apc41cfro2i.rcgu.o
+│   │   │   ├── block_parser_wasm.aau424ux0qg3juwl9un173ox9.rcgu.o
+│   │   │   ├── block_parser_wasm.ah3xn9wi7qcxemks2y8e8cwmu.rcgu.o
+│   │   │   ├── block_parser_wasm.akj96uww0dfdpkth13hhhq7xd.rcgu.o
+│   │   │   ├── block_parser_wasm.aq43ur0zhmdkmb9qntdwf0jya.rcgu.o
+│   │   │   ├── block_parser_wasm.b5iaufvi8f885mvqm3x7cy5rj.rcgu.o
+│   │   │   ├── block_parser_wasm.bf0aopxwwfcxwc5jwpd6e9c8v.rcgu.o
+│   │   │   ├── block_parser_wasm.bs2yv73f5h862rmkzvx4lodat.rcgu.o
+│   │   │   ├── block_parser_wasm.budqjmz1nzylz5p377cgqwfpb.rcgu.o
+│   │   │   ├── block_parser_wasm.c399rz8awcncy0srqxkcv0njr.rcgu.o
+│   │   │   ├── block_parser_wasm.c3i38dxih2grz7dyz3zd86fx9.rcgu.o
+│   │   │   ├── block_parser_wasm.ce7981675nurv4gxgnluhvw3l.rcgu.o
+│   │   │   ├── block_parser_wasm.d
+│   │   │   ├── block_parser_wasm.dkl5wngib6vlzz7enqb3s51t3.rcgu.o
+│   │   │   ├── block_parser_wasm.dz6pe5o8e0ayyeb7jkegplfyq.rcgu.o
+│   │   │   ├── bumpalo-85f365cb96d48d95.d
+│   │   │   ├── cfg_if-7db07564e97b24f9.cfg_if.b320ed5627d0efdf-cgu.0.rcgu.o
+│   │   │   ├── cfg_if-7db07564e97b24f9.d
+│   │   │   ├── cfg_if-a8600644ec0b391e.d
+│   │   │   ├── itoa-36caf02d1b5ac4cf.d
+│   │   │   ├── itoa-c5a312a53a9b920f.d
+│   │   │   ├── itoa-c5a312a53a9b920f.itoa.ede8a3fcfd93a632-cgu.0.rcgu.o
+│   │   │   ├── js_sys-7a5e665c9c5e8c28.d
+│   │   │   ├── js_sys-b34e3e20709ef651.d
+│   │   │   ├── js_sys-b34e3e20709ef651.js_sys.9bffb3d844509ef9-cgu.0.rcgu.o
+│   │   │   ├── js_sys-b34e3e20709ef651.js_sys.9bffb3d844509ef9-cgu.1.rcgu.o
+│   │   │   ├── js_sys-b34e3e20709ef651.js_sys.9bffb3d844509ef9-cgu.2.rcgu.o
+│   │   │   ├── js_sys-b34e3e20709ef651.js_sys.9bffb3d844509ef9-cgu.3.rcgu.o
+│   │   │   ├── libblock_parser_wasm-f0a98279840a1e7a.rmeta
+│   │   │   ├── libblock_parser_wasm.dylib
+│   │   │   ├── libblock_parser_wasm.rlib
+│   │   │   ├── libbumpalo-85f365cb96d48d95.rlib
+│   │   │   ├── libbumpalo-85f365cb96d48d95.rmeta
+│   │   │   ├── libcfg_if-7db07564e97b24f9.rlib
+│   │   │   ├── libcfg_if-7db07564e97b24f9.rmeta
+│   │   │   ├── libcfg_if-a8600644ec0b391e.rmeta
+│   │   │   ├── libitoa-36caf02d1b5ac4cf.rmeta
+│   │   │   ├── libitoa-c5a312a53a9b920f.rlib
+│   │   │   ├── libitoa-c5a312a53a9b920f.rmeta
+│   │   │   ├── libjs_sys-7a5e665c9c5e8c28.rmeta
+│   │   │   ├── libjs_sys-b34e3e20709ef651.rlib
+│   │   │   ├── libjs_sys-b34e3e20709ef651.rmeta
+│   │   │   ├── liblog-9f0832a81aed47fc.rlib
+│   │   │   ├── liblog-9f0832a81aed47fc.rmeta
+│   │   │   ├── libmemchr-64b7195bfe028e02.rlib
+│   │   │   ├── libmemchr-64b7195bfe028e02.rmeta
+│   │   │   ├── libmemchr-f11280686e47ff50.rmeta
+│   │   │   ├── libonce_cell-485894e5d2c0d41e.rmeta
+│   │   │   ├── libonce_cell-64f776d1f4c242a4.rlib
+│   │   │   ├── libonce_cell-64f776d1f4c242a4.rmeta
+│   │   │   ├── libpeg_macros-f6104845b9255011.dylib
+│   │   │   ├── libpeg_runtime-4ac5737e02dbfa87.rmeta
+│   │   │   ├── libpeg_runtime-8036022cb64b856f.rlib
+│   │   │   ├── libpeg_runtime-8036022cb64b856f.rmeta
+│   │   │   ├── libpeg_runtime-dd6efdfdeea47c49.rlib
+│   │   │   ├── libpeg_runtime-dd6efdfdeea47c49.rmeta
+│   │   │   ├── libpeg-821ec231d75776c1.rlib
+│   │   │   ├── libpeg-821ec231d75776c1.rmeta
+│   │   │   ├── libpeg-98e4adab8f38f460.rmeta
+│   │   │   ├── libproc_macro2-07a126034690c25b.rlib
+│   │   │   ├── libproc_macro2-07a126034690c25b.rmeta
+│   │   │   ├── libquote-4f84d764b08892be.rlib
+│   │   │   ├── libquote-4f84d764b08892be.rmeta
+│   │   │   ├── librustversion-acbb83a643c6c45a.dylib
+│   │   │   ├── libryu-59d5a6846910370c.rlib
+│   │   │   ├── libryu-59d5a6846910370c.rmeta
+│   │   │   ├── libryu-da4bbc761d9566d2.rmeta
+│   │   │   ├── libserde_derive-c2b3ed05f84bdf70.dylib
+│   │   │   ├── libserde_json-685d10c1366458fa.rlib
+│   │   │   ├── libserde_json-685d10c1366458fa.rmeta
+│   │   │   ├── libserde_json-951e66f01c107e0c.rmeta
+│   │   │   ├── libserde_wasm_bindgen-678d5a6920d39b8d.rmeta
+│   │   │   ├── libserde_wasm_bindgen-dbd0fbab192decd7.rlib
+│   │   │   ├── libserde_wasm_bindgen-dbd0fbab192decd7.rmeta
+│   │   │   ├── libserde-3118d2c284254ede.rlib
+│   │   │   ├── libserde-3118d2c284254ede.rmeta
+│   │   │   ├── libserde-db6a8a4d5f9b0527.rmeta
+│   │   │   ├── libsyn-621a29a2e75a71e3.rlib
+│   │   │   ├── libsyn-621a29a2e75a71e3.rmeta
+│   │   │   ├── libunicode_ident-d94afd1349fe509c.rlib
+│   │   │   ├── libunicode_ident-d94afd1349fe509c.rmeta
+│   │   │   ├── libwasm_bindgen_backend-a3f9baa4ea35f907.rlib
+│   │   │   ├── libwasm_bindgen_backend-a3f9baa4ea35f907.rmeta
+│   │   │   ├── libwasm_bindgen_macro_support-4a7e2e6c9ba86f79.rlib
+│   │   │   ├── libwasm_bindgen_macro_support-4a7e2e6c9ba86f79.rmeta
+│   │   │   ├── libwasm_bindgen_macro-9c0063d7c6f74a4a.dylib
+│   │   │   ├── libwasm_bindgen_shared-2055604c2e639350.rlib
+│   │   │   ├── libwasm_bindgen_shared-2055604c2e639350.rmeta
+│   │   │   ├── libwasm_bindgen-49b32e0ef66a7809.rmeta
+│   │   │   ├── libwasm_bindgen-b417b1fa2146ef06.rlib
+│   │   │   ├── libwasm_bindgen-b417b1fa2146ef06.rmeta
+│   │   │   ├── log-9f0832a81aed47fc.d
+│   │   │   ├── memchr-64b7195bfe028e02.d
+│   │   │   ├── memchr-64b7195bfe028e02.memchr.946f07f1291138b4-cgu.0.rcgu.o
+│   │   │   ├── memchr-f11280686e47ff50.d
+│   │   │   ├── once_cell-485894e5d2c0d41e.d
+│   │   │   ├── once_cell-64f776d1f4c242a4.d
+│   │   │   ├── once_cell-64f776d1f4c242a4.once_cell.908f7fb94672b9e9-cgu.0.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802
+│   │   │   ├── parser-3c18da9aae185802.05kj5a1pz591aya3oqpnvgyca.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.076vaqoax3djiaw6bulbk6cq8.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.0j6zkp7ah3wppsrhan48wta9m.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.0t8bebyv3rx0vlulog73jmcg6.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.1282ytd7jryslj43b0gkrqgub.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.2j2n3vil93imjhchpeyuccu74.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.3hgdy8lvnl4ldpli1t7u304n4.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.3jr5pgww8oqitihzxzx4ok49z.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.3xwd1bwjgv2oegccld9b3nxr5.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.4qa35fzz1l3ctvpt2v2ipcef4.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.4v8y5ggouyizios22edrln2uz.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.5jxgfi8ymynjs3o285fs76t46.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.5mxykpei5vz36zzq9a7t0sac6.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.5xxuwitntfu0xybbfjnncfsc1.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.62gggnb2maf0862qa7ufggnf0.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.6qbn0my7pb3rwhl71ao783f9w.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.6v4sqanibultd8u39y5iywupm.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.6v5ykdkztbxd5qvvgbmsaux4k.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.7escvd1jm95qhdwpg24galmtb.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.7h6qj49n7tvqbrbczu7xlyozr.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.7ielj49h1wedzcmc8z7xp00ju.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.7qonnctpthy4tcsy50eammh8l.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.86qud0k6cj90xor2xkhvuixht.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.8yh6h1t43f017g9fvklgeuw5h.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.9ge04y6f8rdeuins4gu8e4y51.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.9pk92xwx1cunduqao4idgrlcn.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.a0y2k5lbdjp2fm3qo29k2z3go.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.abxdk2t0zpybbkpexw4q9anxd.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.b9qarkrz4xd00zxbavzui3h96.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.bksd4iit5c68e0q6h9jidlqj7.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.buukdwbwl8wuceo5ip4klvy2g.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.d
+│   │   │   ├── parser-3c18da9aae185802.djj89gtt0p4d3wwvgjvu0ffmh.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.ef3qpfh2o21z6auqqfkts33tx.rcgu.o
+│   │   │   ├── parser-3c18da9aae185802.enlu3mi1nov1c0pqb9qmdf8fc.rcgu.o
+│   │   │   ├── peg_macros-f6104845b9255011.d
+│   │   │   ├── peg_runtime-4ac5737e02dbfa87.d
+│   │   │   ├── peg_runtime-8036022cb64b856f.d
+│   │   │   ├── peg_runtime-8036022cb64b856f.peg_runtime.fcfeb4fd34b2bcac-cgu.0.rcgu.o
+│   │   │   ├── peg_runtime-8036022cb64b856f.peg_runtime.fcfeb4fd34b2bcac-cgu.1.rcgu.o
+│   │   │   ├── peg_runtime-8036022cb64b856f.peg_runtime.fcfeb4fd34b2bcac-cgu.2.rcgu.o
+│   │   │   ├── peg_runtime-8036022cb64b856f.peg_runtime.fcfeb4fd34b2bcac-cgu.3.rcgu.o
+│   │   │   ├── peg_runtime-8036022cb64b856f.peg_runtime.fcfeb4fd34b2bcac-cgu.4.rcgu.o
+│   │   │   ├── peg_runtime-dd6efdfdeea47c49.d
+│   │   │   ├── peg-821ec231d75776c1.d
+│   │   │   ├── peg-821ec231d75776c1.peg.803a7ce15f34f895-cgu.0.rcgu.o
+│   │   │   ├── peg-98e4adab8f38f460.d
+│   │   │   ├── proc_macro2-07a126034690c25b.d
+│   │   │   ├── quote-4f84d764b08892be.d
+│   │   │   ├── rustversion-acbb83a643c6c45a.d
+│   │   │   ├── ryu-59d5a6846910370c.d
+│   │   │   ├── ryu-59d5a6846910370c.ryu.7876a77ecb85b901-cgu.0.rcgu.o
+│   │   │   ├── ryu-da4bbc761d9566d2.d
+│   │   │   ├── serde_derive-c2b3ed05f84bdf70.d
+│   │   │   ├── serde_json-685d10c1366458fa.d
+│   │   │   ├── serde_json-685d10c1366458fa.serde_json.91c0f0d2bc047d0-cgu.0.rcgu.o
+│   │   │   ├── serde_json-685d10c1366458fa.serde_json.91c0f0d2bc047d0-cgu.1.rcgu.o
+│   │   │   ├── serde_json-685d10c1366458fa.serde_json.91c0f0d2bc047d0-cgu.2.rcgu.o
+│   │   │   ├── serde_json-685d10c1366458fa.serde_json.91c0f0d2bc047d0-cgu.3.rcgu.o
+│   │   │   ├── serde_json-685d10c1366458fa.serde_json.91c0f0d2bc047d0-cgu.4.rcgu.o
+│   │   │   ├── serde_json-685d10c1366458fa.serde_json.91c0f0d2bc047d0-cgu.5.rcgu.o
+│   │   │   ├── serde_json-685d10c1366458fa.serde_json.91c0f0d2bc047d0-cgu.6.rcgu.o
+│   │   │   ├── serde_json-685d10c1366458fa.serde_json.91c0f0d2bc047d0-cgu.7.rcgu.o
+│   │   │   ├── serde_json-951e66f01c107e0c.d
+│   │   │   ├── serde_wasm_bindgen-678d5a6920d39b8d.d
+│   │   │   ├── serde_wasm_bindgen-dbd0fbab192decd7.d
+│   │   │   ├── serde_wasm_bindgen-dbd0fbab192decd7.serde_wasm_bindgen.57f9d323cf79d9-cgu.0.rcgu.o
+│   │   │   ├── serde_wasm_bindgen-dbd0fbab192decd7.serde_wasm_bindgen.57f9d323cf79d9-cgu.1.rcgu.o
+│   │   │   ├── serde_wasm_bindgen-dbd0fbab192decd7.serde_wasm_bindgen.57f9d323cf79d9-cgu.2.rcgu.o
+│   │   │   ├── serde-3118d2c284254ede.d
+│   │   │   ├── serde-3118d2c284254ede.serde.b85d7688564622b2-cgu.0.rcgu.o
+│   │   │   ├── serde-db6a8a4d5f9b0527.d
+│   │   │   ├── syn-621a29a2e75a71e3.d
+│   │   │   ├── unicode_ident-d94afd1349fe509c.d
+│   │   │   ├── wasm_bindgen_backend-a3f9baa4ea35f907.d
+│   │   │   ├── wasm_bindgen_macro_support-4a7e2e6c9ba86f79.d
+│   │   │   ├── wasm_bindgen_macro-9c0063d7c6f74a4a.d
+│   │   │   ├── wasm_bindgen_shared-2055604c2e639350.d
+│   │   │   ├── wasm_bindgen-49b32e0ef66a7809.d
+│   │   │   ├── wasm_bindgen-b417b1fa2146ef06.d
+│   │   │   ├── wasm_bindgen-b417b1fa2146ef06.wasm_bindgen.759bafb7fbb1f968-cgu.0.rcgu.o
+│   │   │   ├── wasm_bindgen-b417b1fa2146ef06.wasm_bindgen.759bafb7fbb1f968-cgu.1.rcgu.o
+│   │   │   └── wasm_bindgen-b417b1fa2146ef06.wasm_bindgen.759bafb7fbb1f968-cgu.2.rcgu.o
+│   │   ├── examples
+│   │   └── incremental
+│   │       ├── block_parser_wasm-16f0o3gtqewhs
+│   │       │   ├── s-h7nh9qfjlf-0ia34ei-e35x0x21a58ufaurx7zqpey2t
+│   │       │   │   ├── 0h0d7l44ysvm0gb5f2qflnoq0.o
+│   │       │   │   ├── 0pycxtrj4t7nco683mknyzkq9.o
+│   │       │   │   ├── 143uo0po7eiwykthuvzbmbewt.o
+│   │       │   │   ├── 1ool9r8ops96z0g3abdjc7iqb.o
+│   │       │   │   ├── 27ln3ay5f4wy93ex0c7ni99cv.o
+│   │       │   │   ├── 2925sj6jcjgzwq6bc0gowxecu.o
+│   │       │   │   ├── 2lz8fn0qxpv0afvz04kt0rjzg.o
+│   │       │   │   ├── 39phd3qzc0ttq90ow32lf7fr0.o
+│   │       │   │   ├── 3ivo0a20jivfn5evkl9o69jly.o
+│   │       │   │   ├── 3rv1t2i3461nm1003289pzek1.o
+│   │       │   │   ├── 3t7uwikzga1qrc600xm62k4sv.o
+│   │       │   │   ├── 3yy69rhsgk0owr55u42ys86i9.o
+│   │       │   │   ├── 44bf22obwgt7sfgnwuce5yx43.o
+│   │       │   │   ├── 4erbp5m8bdcef7rccg3fml3ke.o
+│   │       │   │   ├── 4jrnmx4c2azdojrebf389xy21.o
+│   │       │   │   ├── 4ka53r1bx5hnp46z6j3p8427w.o
+│   │       │   │   ├── 4kbs631fogvuihae0gc57lwhf.o
+│   │       │   │   ├── 4v1n8i1dmhv4mvhhcvy58y9nm.o
+│   │       │   │   ├── 6a4qjjn4iigzvcjonwslk2yr7.o
+│   │       │   │   ├── 6kkcwiqox0noucojucj9667ca.o
+│   │       │   │   ├── 6pbtu3rdbpk07k0eruv7fbsv1.o
+│   │       │   │   ├── 83i6y6kkozv2cw9dqfg8ntxi2.o
+│   │       │   │   ├── 8ntyjuk5k3i4h0e99xqe4bbdj.o
+│   │       │   │   ├── 8wiarl34q7iwzsyw1ybghl3xg.o
+│   │       │   │   ├── 9g0r3cp4veqak87m8fbmgbiai.o
+│   │       │   │   ├── 9spev17qy4kua2apc41cfro2i.o
+│   │       │   │   ├── aau424ux0qg3juwl9un173ox9.o
+│   │       │   │   ├── ah3xn9wi7qcxemks2y8e8cwmu.o
+│   │       │   │   ├── akj96uww0dfdpkth13hhhq7xd.o
+│   │       │   │   ├── aq43ur0zhmdkmb9qntdwf0jya.o
+│   │       │   │   ├── b5iaufvi8f885mvqm3x7cy5rj.o
+│   │       │   │   ├── bf0aopxwwfcxwc5jwpd6e9c8v.o
+│   │       │   │   ├── bs2yv73f5h862rmkzvx4lodat.o
+│   │       │   │   ├── budqjmz1nzylz5p377cgqwfpb.o
+│   │       │   │   ├── c399rz8awcncy0srqxkcv0njr.o
+│   │       │   │   ├── c3i38dxih2grz7dyz3zd86fx9.o
+│   │       │   │   ├── ce7981675nurv4gxgnluhvw3l.o
+│   │       │   │   ├── dep-graph.bin
+│   │       │   │   ├── dkl5wngib6vlzz7enqb3s51t3.o
+│   │       │   │   ├── dz6pe5o8e0ayyeb7jkegplfyq.o
+│   │       │   │   ├── query-cache.bin
+│   │       │   │   └── work-products.bin
+│   │       │   ├── s-h7nh9qfjlf-0ia34ei.lock
+│   │       │   ├── s-h7nz4trq0a-0pp2203-working
+│   │       │   │   ├── 0h0d7l44ysvm0gb5f2qflnoq0.o
+│   │       │   │   ├── 0pycxtrj4t7nco683mknyzkq9.o
+│   │       │   │   ├── 143uo0po7eiwykthuvzbmbewt.o
+│   │       │   │   ├── 1ool9r8ops96z0g3abdjc7iqb.o
+│   │       │   │   ├── 27ln3ay5f4wy93ex0c7ni99cv.o
+│   │       │   │   ├── 2925sj6jcjgzwq6bc0gowxecu.o
+│   │       │   │   ├── 2lz8fn0qxpv0afvz04kt0rjzg.o
+│   │       │   │   ├── 39phd3qzc0ttq90ow32lf7fr0.o
+│   │       │   │   ├── 3ivo0a20jivfn5evkl9o69jly.o
+│   │       │   │   ├── 3rv1t2i3461nm1003289pzek1.o
+│   │       │   │   ├── 3t7uwikzga1qrc600xm62k4sv.o
+│   │       │   │   ├── 3yy69rhsgk0owr55u42ys86i9.o
+│   │       │   │   ├── 44bf22obwgt7sfgnwuce5yx43.o
+│   │       │   │   ├── 4erbp5m8bdcef7rccg3fml3ke.o
+│   │       │   │   ├── 4jrnmx4c2azdojrebf389xy21.o
+│   │       │   │   ├── 4ka53r1bx5hnp46z6j3p8427w.o
+│   │       │   │   ├── 4kbs631fogvuihae0gc57lwhf.o
+│   │       │   │   ├── 4v1n8i1dmhv4mvhhcvy58y9nm.o
+│   │       │   │   ├── 6a4qjjn4iigzvcjonwslk2yr7.o
+│   │       │   │   ├── 6kkcwiqox0noucojucj9667ca.o
+│   │       │   │   ├── 6pbtu3rdbpk07k0eruv7fbsv1.o
+│   │       │   │   ├── 83i6y6kkozv2cw9dqfg8ntxi2.o
+│   │       │   │   ├── 8ntyjuk5k3i4h0e99xqe4bbdj.o
+│   │       │   │   ├── 8wiarl34q7iwzsyw1ybghl3xg.o
+│   │       │   │   ├── 9g0r3cp4veqak87m8fbmgbiai.o
+│   │       │   │   ├── 9spev17qy4kua2apc41cfro2i.o
+│   │       │   │   ├── aau424ux0qg3juwl9un173ox9.o
+│   │       │   │   ├── ah3xn9wi7qcxemks2y8e8cwmu.o
+│   │       │   │   ├── akj96uww0dfdpkth13hhhq7xd.o
+│   │       │   │   ├── aq43ur0zhmdkmb9qntdwf0jya.o
+│   │       │   │   ├── b5iaufvi8f885mvqm3x7cy5rj.o
+│   │       │   │   ├── bf0aopxwwfcxwc5jwpd6e9c8v.o
+│   │       │   │   ├── bs2yv73f5h862rmkzvx4lodat.o
+│   │       │   │   ├── budqjmz1nzylz5p377cgqwfpb.o
+│   │       │   │   ├── c399rz8awcncy0srqxkcv0njr.o
+│   │       │   │   ├── c3i38dxih2grz7dyz3zd86fx9.o
+│   │       │   │   ├── ce7981675nurv4gxgnluhvw3l.o
+│   │       │   │   ├── dep-graph.bin
+│   │       │   │   ├── dep-graph.part.bin
+│   │       │   │   ├── dkl5wngib6vlzz7enqb3s51t3.o
+│   │       │   │   ├── dz6pe5o8e0ayyeb7jkegplfyq.o
+│   │       │   │   ├── query-cache.bin
+│   │       │   │   └── work-products.bin
+│   │       │   └── s-h7nz4trq0a-0pp2203.lock
+│   │       ├── block_parser_wasm-2jfunglmx1j9w
+│   │       │   ├── s-h7nh9qfjlb-0f2eeic-bixu63ev7bsc7tvhjuyi9c04m
+│   │       │   │   ├── 222ubqr8mndamu4tucl5beeml.o
+│   │       │   │   ├── 8flrtk6jurqxnq8q1y05gsptf.o
+│   │       │   │   ├── b80t9bb4vnsqj3rck3dhfg1p9.o
+│   │       │   │   ├── dep-graph.bin
+│   │       │   │   ├── e01uii1md14t3b9xw3bxk8blw.o
+│   │       │   │   ├── f2gihapvlrm37ie4iwjcm4evo.o
+│   │       │   │   ├── query-cache.bin
+│   │       │   │   └── work-products.bin
+│   │       │   ├── s-h7nh9qfjlb-0f2eeic.lock
+│   │       │   ├── s-h7nz4trq09-1o1ifzg-working
+│   │       │   │   ├── 222ubqr8mndamu4tucl5beeml.o
+│   │       │   │   ├── 8flrtk6jurqxnq8q1y05gsptf.o
+│   │       │   │   ├── b80t9bb4vnsqj3rck3dhfg1p9.o
+│   │       │   │   ├── dep-graph.bin
+│   │       │   │   ├── dep-graph.part.bin
+│   │       │   │   ├── e01uii1md14t3b9xw3bxk8blw.o
+│   │       │   │   ├── f2gihapvlrm37ie4iwjcm4evo.o
+│   │       │   │   ├── query-cache.bin
+│   │       │   │   └── work-products.bin
+│   │       │   └── s-h7nz4trq09-1o1ifzg.lock
+│   │       ├── block_parser_wasm-39rx1o0suimtc
+│   │       │   ├── s-h7ncc7cn2h-0tj8ib1-aflvk5a7xvytucioemv5spmrl
+│   │       │   │   ├── dep-graph.bin
+│   │       │   │   ├── query-cache.bin
+│   │       │   │   └── work-products.bin
+│   │       │   └── s-h7ncc7cn2h-0tj8ib1.lock
+│   │       └── parser-145gvg8mt79sv
+│   │           ├── s-h7nz28gtzv-1jmjq4q-894cc7dzinf1j5ropqu04puzo
+│   │           │   ├── 0j6zkp7ah3wppsrhan48wta9m.o
+│   │           │   ├── 0t8bebyv3rx0vlulog73jmcg6.o
+│   │           │   ├── 1282ytd7jryslj43b0gkrqgub.o
+│   │           │   ├── 4v8y5ggouyizios22edrln2uz.o
+│   │           │   ├── 62gggnb2maf0862qa7ufggnf0.o
+│   │           │   ├── a0y2k5lbdjp2fm3qo29k2z3go.o
+│   │           │   ├── abxdk2t0zpybbkpexw4q9anxd.o
+│   │           │   ├── bksd4iit5c68e0q6h9jidlqj7.o
+│   │           │   ├── dep-graph.bin
+│   │           │   ├── query-cache.bin
+│   │           │   └── work-products.bin
+│   │           └── s-h7nz28gtzv-1jmjq4q.lock
+│   ├── release
+│   │   ├── build
+│   │   │   ├── proc-macro2-07a6cb322de1d149
+│   │   │   │   ├── invoked.timestamp
+│   │   │   │   ├── out
+│   │   │   │   ├── output
+│   │   │   │   ├── root-output
+│   │   │   │   └── stderr
+│   │   │   ├── proc-macro2-89e37d2f6dce8094
+│   │   │   │   ├── build_script_build-89e37d2f6dce8094
+│   │   │   │   ├── build_script_build-89e37d2f6dce8094.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── rustversion-7d66789c32438b6d
+│   │   │   │   ├── invoked.timestamp
+│   │   │   │   ├── out
+│   │   │   │   │   └── version.expr
+│   │   │   │   ├── output
+│   │   │   │   ├── root-output
+│   │   │   │   └── stderr
+│   │   │   ├── rustversion-abd8a74f094fac9c
+│   │   │   │   ├── build_script_build-abd8a74f094fac9c
+│   │   │   │   ├── build_script_build-abd8a74f094fac9c.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── serde_json-6350cb6c2c696dd6
+│   │   │   │   ├── build_script_build-6350cb6c2c696dd6
+│   │   │   │   ├── build_script_build-6350cb6c2c696dd6.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── serde-5c2ae0f3032314ee
+│   │   │   │   ├── build_script_build-5c2ae0f3032314ee
+│   │   │   │   ├── build_script_build-5c2ae0f3032314ee.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── wasm-bindgen-a6e7dd8614a9c047
+│   │   │   │   ├── build_script_build-a6e7dd8614a9c047
+│   │   │   │   ├── build_script_build-a6e7dd8614a9c047.d
+│   │   │   │   └── build-script-build
+│   │   │   ├── wasm-bindgen-shared-75663a61827b9fd7
+│   │   │   │   ├── build_script_build-75663a61827b9fd7
+│   │   │   │   ├── build_script_build-75663a61827b9fd7.d
+│   │   │   │   └── build-script-build
+│   │   │   └── wasm-bindgen-shared-b62a20948a473bdd
+│   │   │       ├── invoked.timestamp
+│   │   │       ├── out
+│   │   │       ├── output
+│   │   │       ├── root-output
+│   │   │       └── stderr
+│   │   ├── deps
+│   │   │   ├── bumpalo-de89b5849465607b.d
+│   │   │   ├── libbumpalo-de89b5849465607b.rlib
+│   │   │   ├── libbumpalo-de89b5849465607b.rmeta
+│   │   │   ├── liblog-47865f64c26db0ae.rlib
+│   │   │   ├── liblog-47865f64c26db0ae.rmeta
+│   │   │   ├── libpeg_macros-d258b673c36b2e1b.dylib
+│   │   │   ├── libpeg_runtime-89268da673e24e9a.rlib
+│   │   │   ├── libpeg_runtime-89268da673e24e9a.rmeta
+│   │   │   ├── libproc_macro2-73eca2d734a65929.rlib
+│   │   │   ├── libproc_macro2-73eca2d734a65929.rmeta
+│   │   │   ├── libquote-a433c0e8387a03f6.rlib
+│   │   │   ├── libquote-a433c0e8387a03f6.rmeta
+│   │   │   ├── librustversion-05f433a49d8539ed.dylib
+│   │   │   ├── libserde_derive-c786ac2d46f6607f.dylib
+│   │   │   ├── libsyn-3fb1f2b34d9b606c.rlib
+│   │   │   ├── libsyn-3fb1f2b34d9b606c.rmeta
+│   │   │   ├── libunicode_ident-af71fa9cb60540f5.rlib
+│   │   │   ├── libunicode_ident-af71fa9cb60540f5.rmeta
+│   │   │   ├── libwasm_bindgen_backend-eccac0daf6527587.rlib
+│   │   │   ├── libwasm_bindgen_backend-eccac0daf6527587.rmeta
+│   │   │   ├── libwasm_bindgen_macro_support-8e5dfeded8f72fb1.rlib
+│   │   │   ├── libwasm_bindgen_macro_support-8e5dfeded8f72fb1.rmeta
+│   │   │   ├── libwasm_bindgen_macro-76355c82b137ef40.dylib
+│   │   │   ├── libwasm_bindgen_shared-669253c3f7bc6445.rlib
+│   │   │   ├── libwasm_bindgen_shared-669253c3f7bc6445.rmeta
+│   │   │   ├── log-47865f64c26db0ae.d
+│   │   │   ├── peg_macros-d258b673c36b2e1b.d
+│   │   │   ├── peg_runtime-89268da673e24e9a.d
+│   │   │   ├── proc_macro2-73eca2d734a65929.d
+│   │   │   ├── quote-a433c0e8387a03f6.d
+│   │   │   ├── rustversion-05f433a49d8539ed.d
+│   │   │   ├── serde_derive-c786ac2d46f6607f.d
+│   │   │   ├── syn-3fb1f2b34d9b606c.d
+│   │   │   ├── unicode_ident-af71fa9cb60540f5.d
+│   │   │   ├── wasm_bindgen_backend-eccac0daf6527587.d
+│   │   │   ├── wasm_bindgen_macro_support-8e5dfeded8f72fb1.d
+│   │   │   ├── wasm_bindgen_macro-76355c82b137ef40.d
+│   │   │   └── wasm_bindgen_shared-669253c3f7bc6445.d
+│   │   ├── examples
+│   │   └── incremental
+│   ├── tmp
+│   └── wasm32-unknown-unknown
+│       ├── CACHEDIR.TAG
+│       └── release
+│           ├── block_parser_wasm.d
+│           ├── block_parser_wasm.wasm
+│           ├── build
+│           │   ├── serde_json-859be0ac77c62163
+│           │   │   ├── invoked.timestamp
+│           │   │   ├── out
+│           │   │   ├── output
+│           │   │   ├── root-output
+│           │   │   └── stderr
+│           │   ├── serde-67f5ff8ba4e3fff7
+│           │   │   ├── invoked.timestamp
+│           │   │   ├── out
+│           │   │   ├── output
+│           │   │   ├── root-output
+│           │   │   └── stderr
+│           │   └── wasm-bindgen-b4bf8a20d53c06fe
+│           │       ├── invoked.timestamp
+│           │       ├── out
+│           │       ├── output
+│           │       ├── root-output
+│           │       └── stderr
+│           ├── deps
+│           │   ├── block_parser_wasm.d
+│           │   ├── cfg_if-ee0e08705258fa9a.d
+│           │   ├── gutenberg_parser_wasm.d
+│           │   ├── gutenberg_parser_wasm.wasm
+│           │   ├── itoa-fd536af9646897eb.d
+│           │   ├── js_sys-c2dda10e4b4aad67.d
+│           │   ├── libcfg_if-ee0e08705258fa9a.rlib
+│           │   ├── libcfg_if-ee0e08705258fa9a.rmeta
+│           │   ├── libgutenberg_parser_wasm.rlib
+│           │   ├── libitoa-fd536af9646897eb.rlib
+│           │   ├── libitoa-fd536af9646897eb.rmeta
+│           │   ├── libjs_sys-c2dda10e4b4aad67.rlib
+│           │   ├── libjs_sys-c2dda10e4b4aad67.rmeta
+│           │   ├── libmemchr-4f6de043b0fc5d25.rlib
+│           │   ├── libmemchr-4f6de043b0fc5d25.rmeta
+│           │   ├── libonce_cell-7a0a93db61a34803.rlib
+│           │   ├── libonce_cell-7a0a93db61a34803.rmeta
+│           │   ├── libpeg_runtime-3f4cad23d73059a2.rlib
+│           │   ├── libpeg_runtime-3f4cad23d73059a2.rmeta
+│           │   ├── libpeg-b0dff4d4f0fc449e.rlib
+│           │   ├── libpeg-b0dff4d4f0fc449e.rmeta
+│           │   ├── libryu-5ab977e724522b15.rlib
+│           │   ├── libryu-5ab977e724522b15.rmeta
+│           │   ├── libserde_json-a825e004c37d62ff.rlib
+│           │   ├── libserde_json-a825e004c37d62ff.rmeta
+│           │   ├── libserde_wasm_bindgen-8e9156dc4381c8cf.rlib
+│           │   ├── libserde_wasm_bindgen-8e9156dc4381c8cf.rmeta
+│           │   ├── libserde-f84c50ea6335d28b.rlib
+│           │   ├── libserde-f84c50ea6335d28b.rmeta
+│           │   ├── libwasm_bindgen-79b1071115286d84.rlib
+│           │   ├── libwasm_bindgen-79b1071115286d84.rmeta
+│           │   ├── memchr-4f6de043b0fc5d25.d
+│           │   ├── once_cell-7a0a93db61a34803.d
+│           │   ├── peg_runtime-3f4cad23d73059a2.d
+│           │   ├── peg-b0dff4d4f0fc449e.d
+│           │   ├── ryu-5ab977e724522b15.d
+│           │   ├── serde_json-a825e004c37d62ff.d
+│           │   ├── serde_wasm_bindgen-8e9156dc4381c8cf.d
+│           │   ├── serde-f84c50ea6335d28b.d
+│           │   └── wasm_bindgen-79b1071115286d84.d
+│           ├── examples
+│           ├── gutenberg_parser_wasm.d
+│           ├── gutenberg_parser_wasm.wasm
+│           ├── incremental
+│           ├── libblock_parser_wasm.d
+│           ├── libblock_parser_wasm.rlib
+│           ├── libgutenberg_parser_wasm.d
+│           └── libgutenberg_parser_wasm.rlib
+├── tests
+│   ├── fixtures
+│   │   └── long.txt
+│   └── parser.rs
+├── tsconfig.json
+└── tsup.config.ts
+
+72 directories, 536 files
